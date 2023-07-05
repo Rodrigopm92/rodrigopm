@@ -1,0 +1,30 @@
+Capture an authorized payment
+
+https://api-uat.kushkipagos.com
+/subscriptions/v1/card/{subscriptionId}/capture
+
+Request Sample
+
+curl --request POST \
+  --url https://api-uat.kushkipagos.com/subscriptions/v1/card/subscriptionId/capture \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --header 'Private-Merchant-Id: ' \
+  --data '{
+  "ticketNumber": "319228478889680318",
+  "amount": {
+    "currency": "MXN",
+    "subtotalIva": 0,
+    "iva": 0,
+    "subtotalIva0": 600,
+    "ice": 0
+  },
+  "fullResponse": "v2"
+}'
+
+Response example
+
+{
+  "ticketNumber": "103836286199869975",
+  "transactionReference": "bc477fc9-bfe7-4a4e-aadf-36f0c377e959"
+}

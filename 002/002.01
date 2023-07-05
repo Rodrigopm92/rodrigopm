@@ -1,0 +1,26 @@
+Request a recurring charge token
+
+https://api-uat.kushkipagos.com
+/subscriptions/v1/card/tokens
+
+Request sample
+curl --request POST \
+  --url https://api-uat.kushkipagos.com/subscriptions/v1/card/tokens \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --header 'Public-Merchant-Id: ' \
+  --data '{
+  "card": {
+    "name": "John Doe",
+    "number": "4242424242424242",
+    "expiryMonth": "03",
+    "expiryYear": "25",
+    "cvv": "071"
+  },
+  "currency": "USD"
+}'
+
+Response example
+{
+  "token": "AbCDef123456Z7Ghi8901234jkLMNopQ"
+}

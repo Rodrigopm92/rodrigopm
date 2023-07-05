@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba Kushki</title>
+    <style>
+        form > iframe {
+            height: 1000px;
+        }
+    </style>
+    <!-- Incluye el script de kushki-checkout.js en tu página de pago -->
+    <title>Checkout</title>
+  <script src="https://cdn.kushkipagos.com/kushki-checkout.js">       </script>
+</head>
+<body>
+    <!-- Añade el formulario de Kajita a tu sitio -->
+    <form id="my-form" action="/confirm" method="post">
+      <input type="hidden" name="cart_id" value="123">
+    </form>
+
+    <!-- Agrega el script para configurar Kajita y solicitar el token de suscripción -->
+    <script type="text/javascript">
+      var kushki = new KushkiCheckout({
+          kformId: "CseJZKRvp",
+          form: "my-form",
+          publicMerchantId: "06a2d31ba3e64a96a98c0a22f1fcc587",// Reemplaza esto por tucredencial pública
+          inTestEnvironment: true,
+          amount: {
+           subtotalIva: 0,
+           iva: 0,
+           subtotalIva0: 1000,
+           }
+          });
+     </script>
+</body>
+</html>

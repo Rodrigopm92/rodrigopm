@@ -1,0 +1,17 @@
+Void a transaction
+
+https://api-uat.kushkipagos.com
+/v1/charges/{ticketNumber}
+
+Request sample
+
+curl --request DELETE \
+  --url https://api-uat.kushkipagos.com/v1/charges/ticketNumber \
+  --header 'Accept: application/json' \
+  --header 'Private-Merchant-Id: '
+  
+Response example
+
+{
+  "ticketNumber": "661596843269335647"
+}

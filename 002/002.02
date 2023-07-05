@@ -1,0 +1,38 @@
+Subscription
+
+{
+  "token": "AbCDef123456Z7Ghi8901234jkLMNopQ",
+  "planName": "Premium",
+  "periodicity": "daily",
+  "contactDetails": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "secondLastName": "string",
+    "email": "user@example.com",
+    "documentType": "CC",
+    "documentNumber": "string",
+    "phoneNumber": "+593988734644"
+  },
+  "ignoreWarnings": true,
+  "amount": {
+    "currency": "USD",
+    "subtotalIva": 0,
+    "subtotalIva0": 0,
+    "iva": 0,
+    "ice": 0,
+    "extraTaxes": {
+      "iac": 0,
+      "tasaAeroportuaria": 0,
+      "agenciaDeViaje": 0
+    }
+  },
+  "startDate": "2018-09-29",
+  "endDate": "2022-09-29",
+  "language": "es",
+  "retryConfiguration": "Three days in a row starting at startDate",
+  "metadata": {
+    "key0": "value0",
+    "key1": "value1",
+    "key2": "value2"
+  }
+}

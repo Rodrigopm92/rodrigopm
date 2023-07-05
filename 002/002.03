@@ -1,0 +1,88 @@
+Authorize payments
+
+https://api-uat.kushkipagos.com
+/card/v1/preAuthorization
+
+Request sample
+
+curl --request POST \
+  --url https://api-uat.kushkipagos.com/card/v1/preAuthorization \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --header 'Private-Merchant-Id: ' \
+  --data '{
+  "token": "8b91be6433c94a98b2b8db6a3e7e564d",
+  "amount": {
+    "subtotalIva": 0,
+    "subtotalIva0": 39,
+    "ice": 0,
+    "iva": 0,
+    "currency": "PEN"
+  },
+  "orderDetails": {
+    "siteDomain": "example.com",
+    "shippingDetails": {
+      "name": "John Doe",
+      "phone": "+667566314515",
+      "address": "Av Mariscal Caceres",
+      "city": "Ayacucho",
+      "region": "Ayacucho",
+      "country": "Perú",
+      "zipCode": "170402"
+    },
+    "billingDetails": {
+      "name": "John Doe",
+      "phone": "+593912345678",
+      "address": "Av Mariscal Caceres",
+      "city": "Ayacucho",
+      "region": "Ayacucho",
+      "country": "Perú",
+      "zipCode": "170402"
+    }
+  },
+  "months": 3,
+  "fullResponse": "v2",
+  "metadata": {
+    "key0": "value0",
+    "key1": "value1",
+    "key2": "value2"
+  }
+}'
+
+Response example
+
+{
+  "details": {
+    "amount": {
+      "subtotalIva": 0,
+      "subtotalIva0": 59,
+      "ice": 0,
+      "iva": 0,
+      "currency": "MXN"
+    },
+    "approvalCode": "000000",
+    "approvedTransactionAmount": 59,
+    "binInfo": {
+      "bank": "BANCO DE LA PRODUCCION S.A. (PRODUBANCO)",
+      "bindCard": "545195",
+      "cardCountry": "Ecuador",
+      "lastFourDigits": "5480",
+      "type": "credit"
+    },
+    "cardHolderName": "John Doe",
+    "created": 1658360425000,
+    "merchantId": "20000000104111374000",
+    "merchantName": "Merchant MX",
+    "paymentBrand": "Master Card",
+    "processorBankName": "0032~BANCO INTERNACIONAL",
+    "requestAmount": 59,
+    "responseCode": "000",
+    "responseText": "Transacción aprobada",
+    "transactionId": "985906214634267722",
+    "transactionReference": "8a42f3a2-fa30-4019-b8f6-9bfc7c78e669",
+    "transactionStatus": "APPROVAL",
+    "transactionType": "PREAUTHORIZATION"
+  },
+  "ticketNumber": "073884255559778896",
+  "transactionReference": "8a42f3a2-fa30-4019-b8f6-9bfc7c78e669"
+}
